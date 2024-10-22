@@ -1,4 +1,24 @@
-﻿#region FUNCTIONS_EXAMPLES
+﻿#region LOOPS
+// zadanie 1
+
+// zadanie 2
+
+// zadanie 3
+
+// zadanie 4
+
+// zadanie 5
+List<int> numbers = new List<int>() { 4, 25, 35, 42, 55, 78, 99, 101 };
+
+// zadanie 6
+
+#endregion
+
+#region ARRAYS
+
+#endregion
+
+#region FUNCTIONS_EXAMPLES
 PrintNewLine();
 PrintIfNotEmpty("");
 int maxVal = GetIntMaxValue();
@@ -29,4 +49,6 @@ double CalculateCube(double parameter)
 }
 #endregion
 
-List<int> numbers = new List<int>() { 4, 25, 35, 42, 55, 78, 99, 101 };
+#region FUNCTIONS
+
+#endregion
