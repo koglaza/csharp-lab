@@ -15,10 +15,12 @@ namespace ConsoleApp1
 
             Multiply(1.0, 2.0);
             Multiply(1.0, 2.0, 3.0);
-            Multiply(1.0, 2.0, 3.0, 4.0, 5.0);
+            Multiply(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0);
+
+
 
             PrintDayOfTheWeek(DayOfTheWeek.Monday);
-
+            PrintDayOfTheWeek(DayOfTheWeek.Saturday);
 
             string itemName = "eggplant";
             DateTime date = DateTime.Now;
@@ -26,6 +28,37 @@ namespace ConsoleApp1
             Unit unit = Unit.item;
             Console.WriteLine($"On {date.Year}, the price of {itemName} was {price} per {unit}.");
 
+            PrintDateTime(DateTime.Now);
+
+            DivideSafe(5, 0);
+        }
+
+        static double Divide(double a, double b)
+        {
+            if (b == 0.0)
+                throw new DivideByZeroException("b = 0.0 :(");
+            return a / b;
+        }
+
+        static double DivideSafe(double a, double b)
+        {
+            double result;
+            try
+            {
+                result = Divide(a, b);
+            }
+            catch (DivideByZeroException ex)
+            {
+                result = 0.0;
+            }
+
+            return result;
+        }
+
+        static void PrintDateTime(DateTime date)
+        {
+            string customDateString = $"{date.Day}...{date.Month}...{date.Year}...{date.Hour}:{date.Minute}:{date.Second}...{date.DayOfWeek}";
+            Console.WriteLine(customDateString);
         }
 
         static double QuadraticEquation(double x = 0.0, double a = 1.0, double b = 1.0, double c = 1.0)
@@ -56,6 +89,19 @@ namespace ConsoleApp1
         static void PrintDayOfTheWeek(DayOfTheWeek day)
         {
             Console.WriteLine(day);
+            Console.WriteLine((int)day);
+
+            // opcja 1
+            if ((int)day >= 6)
+                Console.WriteLine("WEEKEND!!!");
+            else
+                Console.WriteLine("workweek :-(");
+
+            // opcja 2
+            if (day == DayOfTheWeek.Saturday || day == DayOfTheWeek.Sunday)
+                Console.WriteLine("WEEKEND!!!");
+            else
+                Console.WriteLine("workweek :-(");
         }
         bool CheckTheAge(int age)
         {
@@ -68,7 +114,13 @@ namespace ConsoleApp1
         }
         enum DayOfTheWeek
         {
-            Monday
+            Monday = 1,
+            Tuesday = 2,
+            Wednesday = 3,
+            Thursday = 4,
+            Friday = 5,
+            Saturday = 6,
+            Sunday = 7
         }
 
         enum Unit { item, kilogram, gram, dozen };
