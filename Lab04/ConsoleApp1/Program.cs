@@ -55,6 +55,31 @@ namespace ConsoleApp1
             return result;
         }
 
+        static void SetYourNewPassword(string password)
+        {
+            if (password == "")
+                throw new ArgumentException("Empty password");
+
+            bool strongPassword = true;
+
+            // tylko male litery
+            if(password == password.ToLower())
+                strongPassword = false;
+
+            // tylko wielkie litery
+            if (password == password.ToUpper())
+                strongPassword = false;
+
+            // cyfry (TRUDNE)
+            // np. po kolei każdy znak i sprawdzenie "char.IsAsciiDigit == true"
+
+            // znaki specjalne (BARDZO TRUDNE)
+            // np. ASCII table
+
+            if (strongPassword)
+                throw new FormatException("Too weak password");
+        }
+
         static void PrintDateTime(DateTime date)
         {
             string customDateString = $"{date.Day}...{date.Month}...{date.Year}...{date.Hour}:{date.Minute}:{date.Second}...{date.DayOfWeek}";
