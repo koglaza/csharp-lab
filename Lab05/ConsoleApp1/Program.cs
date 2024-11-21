@@ -47,10 +47,8 @@ for (int i = 0; i < 20; i++)
 
 
 #region classes
-Person person1 = new Person();
-person1.firstName = "John";
-person1.lastName = "Doe";
-Console.WriteLine($"Person={person1.firstName} {person1.lastName}");
+Person person1 = new Person("John", "Doe");
+Console.WriteLine($"Person={person1.FirstName} {person1.LastName}");
 #endregion
 
 
