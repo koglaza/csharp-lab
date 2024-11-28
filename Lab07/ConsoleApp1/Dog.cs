@@ -25,7 +25,7 @@ namespace ConsoleApp1
 
         public void Swim()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("I swim poorly...");
         }
     }
 }
